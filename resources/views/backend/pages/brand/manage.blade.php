@@ -17,7 +17,19 @@
 
 <div class="bd rounded table-responsive">
     <table class="table table-bordered table-striped table-hover"cellspacing="0" width="100">
-
+<thead>
+<tr>
+<th>#SI</th>
+<th>Image</th>
+<th>Name</th>
+<th>Slug</th>
+<th>Description</th>
+<th>Category/Subcategory</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
 
 <tr>
 <th scope="row">01</th>

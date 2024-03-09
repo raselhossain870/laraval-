@@ -31,11 +31,25 @@
 </thead>
 <tbody>
 
+@php $i=1; @endphp
+@foreach($brands as $brand)
+
+
 <tr>
-<th scope="row">01</th>
-<td>Rasel er chobi</td>
-<td>Rasel</td>
-<td>brand</td>
+<th scope="row">{{$i}}</th>
+<td>{{$brand->name}}</td>
+<td>{{$brand->slug-</td>
+
+
+
+
+
+<td>{{$brand->description}}</td>
+
+@if($brand->is_featured==1)
+<span class="badge badge-success">Yes</span>
+<span class="badge badge-warning">No</span>
+@endif
 <td>brand category</td>
 <td>Yellow/Arong</td>
 <td>Active</td>

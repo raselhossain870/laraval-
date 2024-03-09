@@ -16,7 +16,8 @@ class BrandController extends Controller
      */
     public function index()
     {
-        return view('backend.pages.brand.manage');
+        $brands = Brand::orderBy('name','asc')->get();
+        return view('backend.pages.brand.manage',compact('brands'));
     }
 
 

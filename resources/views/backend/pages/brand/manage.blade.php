@@ -24,7 +24,7 @@
 <th>Name</th>
 <th>Slug</th>
 <th>Description</th>
-<th>Category/Subcategory</th>
+<th>Is Featured</th>
 <th>Status</th>
 <th>Action</th>
 </tr>
@@ -37,24 +37,60 @@
 
 <tr>
 <th scope="row">{{$i}}</th>
+<td></td>
 <td>{{$brand->name}}</td>
-<td>{{$brand->slug-</td>
-
-
-
-
-
+<td>{{$brand->slug}}</td>
 <td>{{$brand->description}}</td>
-
+<td>
 @if($brand->is_featured==1)
 <span class="badge badge-success">Yes</span>
 <span class="badge badge-warning">No</span>
 @endif
-<td>brand category</td>
-<td>Yellow/Arong</td>
-<td>Active</td>
-<td>edit/delete</td>
+</td>
+<td>
+@if($brand->is_status==1)
+<span class="badge badge-success">Active</span>
+<span class="badge badge-warning">Inactive</span>
+@endif
+</td>
+<td>
+<a class="btn btn-info btn-sm" href="{{route('brand.edit',$brand->id)}}">
+<i class="fas fa-pencil-alt"></i>
+</a>
+<a class="btn btn-danger btn-sm" href="#" data-toggle="model" data-target="#deleteBrand{{$brand->id}}">
+<i class="fas fa-trash"></i>
+</a>
+
+<div class="modal fade" id="deleteBrand{{$brand->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-header">
+
+
+<h5 class="modal-title" id="exampleModalLabel">Delete this information
+</h5>
+<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+<div class="modal-body">
+<ul>
+<li><a href="{{route('brand.destroy', $brand->id)}}" class="btn btn-danger">Delete</a></li>
+<li><button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+</td>
+
+
 </tr>
+
+
+@php $i++; @endphp
+@endforeach
 </tbody>
 </table>
 

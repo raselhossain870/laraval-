@@ -25,7 +25,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/create','App\Http\Controllers\Backend\BrandController@create')->name('brand.create');
 
 Route::post('/store','App\Http\Controllers\Backend\BrandController@store')->name('brand.store');
-
-
+Route::post('/edit/{id}','App\Http\Controllers\Backend\BrandController@edit')->name('brand.edit');
+Route::post('/delete/{id}','App\Http\Controllers\Backend\BrandController@destroy')->name('brand.destroy');
 });
 });

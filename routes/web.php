@@ -25,7 +25,31 @@ use Illuminate\Support\Facades\Route;
 Route::get('/create','App\Http\Controllers\Backend\BrandController@create')->name('brand.create');
 
 Route::post('/store','App\Http\Controllers\Backend\BrandController@store')->name('brand.store');
-Route::post('/edit/{id}','App\Http\Controllers\Backend\BrandController@edit')->name('brand.edit');
-Route::post('/delete/{id}','App\Http\Controllers\Backend\BrandController@destroy')->name('brand.destroy');
+Route::get('/edit/{id}','App\Http\Controllers\Backend\BrandController@edit')->name('brand.edit');
+Route::post('/update/{id}','App\Http\Controllers\Backend\BrandController@update')->name('brand.update');
+Route::get('/delete/{id}','App\Http\Controllers\Backend\BrandController@destroy')->name('brand.destroy');
+
+
 });
+
+
+        //  Category Route for CRUD
+
+ Route::group(['prefix'=> 'category'], function () {
+        Route::get('/manage','App\Http\Controllers\Backend\CategoryController@index')->name('category.manage');
+        Route::get('/create','App\Http\Controllers\Backend\CategoryController@create')->name('category.create');
+        Route::post('/store','App\Http\Controllers\Backend\CategoryController@store')->name('category.store');
+        Route::get('/edit/{id}','App\Http\Controllers\Backend\CategoryController@edit')->name('category.edit');
+        Route::post('/update/{id}','App\Http\Controllers\Backend\CategoryController@update')->name('category.update');
+        Route::get('/delete/{id}','App\Http\Controllers\Backend\CategoryController@destroy')->name('category.destroy');
+
+
+});
+
+
+
+
+
+
+
 });

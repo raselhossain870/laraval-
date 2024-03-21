@@ -40,6 +40,16 @@
 
         <li class="br-menu-item">
           <a href="#" class="br-menu-link with-sub">
+            <i class="menu-item-icon icon ion-ios-photos-outline tx-20"></i>
+            <span class="menu-item-label">Product</span>
+          </a><!-- br-menu-link -->
+          <ul class="br-menu-sub">
+            <li class="sub-item"><a href="{{route('product.manage')}}" class="sub-link">Mange All Products</a></li>
+            <li class="sub-item"><a href="{{route('product.create')}}" class="sub-link">Add New Product</a></li>
+          </ul>
+        </li>
+        <li class="br-menu-item">
+          <a href="#" class="br-menu-link with-sub">
             <i class="menu-item-icon icon ion-ios-filing-outline tx-24"></i>
             <span class="menu-item-label">UI Elements</span>
           </a> <!-- br-menu-link -->

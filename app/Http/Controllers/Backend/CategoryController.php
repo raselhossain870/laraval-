@@ -75,7 +75,15 @@ if ($request->image){
      */
     public function edit(string $id)
     {
+        $category = Category::find($id);
+        if (!is_null($category))
+        {
+        return view('backend.pages.category.edit',compact('category'));
+        }
+        else{
+            return redirect()->route('category.manage');
 
+    }
 
         }
     /**
@@ -83,7 +91,35 @@ if ($request->image){
      */
     public function update(Request $request, string $id)
     {
-        //
+
+        $request->validate([
+            'name'=>'required|max:255',
+        ],
+
+        ['name.required'=>'Please insert the Category name',
+
+        ]
+    );
+        $category = category::find($id);
+        $category->name=$request->name;
+        $category->slug=Str::slug($request->name);
+        $category->description=$request->description;
+        $category->is_parent=$request->is_parent;
+        // $category->featured=$request->featured;
+        $category->icon_class=$request->icon_class;
+        $category->status=$request->status;
+if (!is_null($request->image)){
+if (File::exists('backend/img/category/'.$category->image)){
+    File::delete('backend/img/category/'.$category->image);
+}
+$image = $request->file('image');
+$img = rand().'.'.$image->getClientOriginalExtension();
+$location = public_path('backend/img/category/'.$img);
+Image::make($image)->save($location);
+$category->image = $img;
+}
+$category->save();
+return redirect()->route('category.manage');
     }
 
     /**

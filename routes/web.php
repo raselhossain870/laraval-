@@ -46,7 +46,16 @@ Route::get('/delete/{id}','App\Http\Controllers\Backend\BrandController@destroy'
 
 });
 
+Route::group(['prefix'=> 'product'], function () {
+    Route::get('/manage','App\Http\Controllers\Backend\ProductController@index')->name('product.manage');
+    Route::get('/create','App\Http\Controllers\Backend\ProductController@create')->name('product.create');
+    Route::post('/store','App\Http\Controllers\Backend\ProductController@store')->name('product.store');
+    Route::get('/edit/{id}','App\Http\Controllers\Backend\ProductController@edit')->name('product.edit');
+    Route::post('/update/{id}','App\Http\Controllers\Backend\ProductController@update')->name('product.update');
+    Route::get('/delete/{id}','App\Http\Controllers\Backend\ProductController@destroy')->name('product.destroy');
 
+
+});
 
 
 

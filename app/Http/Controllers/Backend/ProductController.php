@@ -12,7 +12,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        $products = Product::orderBy('name','asc')->get();
+        return view('backend.pages.product.manage',compact('products'));
     }
 
     /**
@@ -28,7 +29,32 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name'=>'required|max:255',
+        ],
+
+        ['name.required'=>'Please insert the Brand name',
+
+        ]
+    );
+        $product=new Product();
+        $product->name=$request->name;
+        $product->slug=Str::slug($request->name);
+        $product->description=$request->description;
+        $product->is_featured=$request->is_featured;
+        $product->status=$request->status;
+
+
+        if ($request->image)
+        {
+           $image=$request->file('image');
+           $img=rand().'.'.$image->getClientOriginalExtension();
+           $location=public_path('backend/img/product/'.$img);
+           Image::make($image)->save($location);
+           $product->image=$img;
+        }
+        $product->save();
+        return redirect()->route('product.manage');
     }
 
     /**
@@ -44,8 +70,16 @@ class ProductController extends Controller
      */
     public function edit(string $id)
     {
-        //
-    }
+        $product = Product::find($id);
+        if (!is_null($product))
+        {
+        return view('backend.pages.product.edit',compact('product'));
+        }
+        else{
+            return redirect()->route('product.manage');
+
+    }}
+
 
     /**
      * Update the specified resource in storage.
@@ -60,6 +94,17 @@ class ProductController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $product = Product::find($id);
+        if (!is_null($product)){
+            if (File::exists('Backend/img/product/'.$product->image)){
+                File::delete('Backend/img/product/'.$product->image);
+            }
+           $product->delete();
+            return redirect()->route('product.manage');
     }
-}
+
+            else{
+            return redirect()->route('product.manage');
+    } }}
+
+

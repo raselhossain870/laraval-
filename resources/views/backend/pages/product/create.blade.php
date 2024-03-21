@@ -56,8 +56,6 @@
 <label>Tags</label>
 <input type="text" name="tags" class="form-control">
 </div>
-
-
 </div>
 
 <div class="col-lg-4">
@@ -79,16 +77,14 @@
 @foreach(App\Models\Backend\Brand::orderBy('name','asc')->get() as $parentcat)
 <option value="{{$parentcat->id}}">{{$parentcat->name}}</option>
 @endforeach
-<option value="1">Active</option>
 </select>
 </div>
-
 
 <div class="form-group">
  <label>Product Category</label>
  <select name="category_id" class="form-control">
 <option>Please Select the product category</option>
-@foreach(App\Models\Backend\Category::orderBy('name','asc')->get() as $parentcat)
+@foreach(App\Models\Backend\Category::orderBy('name','asc')->where('is_parent',0)->get() as $parentcat)
 <option value="{{$parentcat->id}}">{{$parentcat->name}}</option>
 @foreach(App\Models\Backend\Category::orderBy('name','asc')->where('is_parent',$parentcat->id)->get() as $childcat)
 <option value="{{$childcat->id}}">--{{$childcat->name}}</option>
@@ -107,35 +103,33 @@
  </select>
 </div>
 
+<div class="form-group">
+ <label> Status</label>
+ <select name="status" class="form-control">
+<option> Please Select Product status</option>
+<option value="0">New</option>
+<option value="1">Pre_owned</option>
+ </select>
 </div>
 
-
-
-
-
-
-
-
-<div class="form-group">
+    <div class="form-group">
   <label>Product logo/Image</label>
 <input type="file" name="image" class="form-control-file">
 </div>
 
-<div class="form-group text text-center">
+<div class="form-group">
 <input type="submit" name="addcategory" class="btn btn-block btn-primary btn-flat" value="Add  New Product" >
 </div>
 
 
+
+
+
 </div>
 </div>
 
-
-<!-- <div class="form-group">
-<input type="submit" name="addcategory" class="btn btn-block btn-primary btn-flat" value="Add  New Product" >
-</div> -->
-</div>
 </form>
-
+</div>
 
 
 @endsection

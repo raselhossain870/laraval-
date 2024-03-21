@@ -47,6 +47,7 @@ $category->name = $request->name;
 $category->slug = Str::slug($request->name);
 $category->description = $request->description;
 $category->is_parent= $request->is_parent;
+// $category->featured = $request->featured;
 $category->status = $request->status;
 
 if ($request->image){
@@ -127,6 +128,16 @@ return redirect()->route('category.manage');
      */
     public function destroy(string $id)
     {
-        //
+        $category = Category::find($id);
+        if (!is_null($category)){
+            if (File::exists('Backend/img/category/'.$category->image)){
+                File::delete('Backend/img/category/'.$category->image);
+            }
+           $category->delete();
+            return redirect()->route('category.manage');
     }
-}
+
+            else{
+            return redirect()->route('category.manage');
+    }}}
+

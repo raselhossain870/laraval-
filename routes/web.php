@@ -46,6 +46,8 @@ Route::get('/delete/{id}','App\Http\Controllers\Backend\BrandController@destroy'
 
 });
 
+        //  Product Route for CRUD
+
 Route::group(['prefix'=> 'product'], function () {
     Route::get('/manage','App\Http\Controllers\Backend\ProductController@index')->name('product.manage');
     Route::get('/create','App\Http\Controllers\Backend\ProductController@create')->name('product.create');

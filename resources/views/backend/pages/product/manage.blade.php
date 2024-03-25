@@ -48,7 +48,7 @@
 <td>{{$product->slug}}</td>
 <td>{{$product->description}}</td>
 <td>
-@if($product->is_featured==1)
+@if($product->featured_item==1)
 <span class="badge badge-success">Yes</span>
 @else
 <span class="badge badge-warning">No</span>
@@ -98,7 +98,8 @@
 </tr>
 
 
-@php $i++; @endphp
+@php $i++;
+@endphp
 @endforeach
 </tbody>
 </table>

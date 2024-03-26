@@ -29,7 +29,7 @@
 
 <div class="form-group">
 <label>Product Description</label>
-<textarea class="form-control" name="description" rows="7">{{$product->description}}</textarea>
+<textarea class="form-control" name="description" rows="7">{{$product->desc}}</textarea>
 </div>
 </div>
 
@@ -37,12 +37,12 @@
         <div class="col-lg-6">
 
 <div class="form-group">
-<label>Is Featured</label>
-<select class="form-control" name="is_featured">
+<label>Featured_item</label>
+<select class="form-control" name="featured_item">
     <option>Please Select One Option</option>
-<option value="1" @if($product->is_featured==1)selected @endif>Yes Featured</option>
+<option value="1" @if($product->featured_item==1)selected @endif>Yes Featured</option>
 
-<option value="0" @if($product->is_featured==0)selected @endif>Not Featured</option>
+<option value="0" @if($product->featured_item==0)selected @endif>Not Featured</option>
 </select>
 </div>
 

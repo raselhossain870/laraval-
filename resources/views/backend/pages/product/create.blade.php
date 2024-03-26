@@ -1,6 +1,7 @@
 @extends('backend.layout.template')
 @section('body')
 
+<!-- start br-pagetitle -->
 <div class="br-pagetitle">
 <i class="icon ion-ios-home-outline"></i>
 <div>
@@ -8,6 +9,7 @@
 <p class="mg-b-0">Do bigger things with Bracket plus</p>
 </div>
 </div>
+<!-- End br-pagetitle -->
 
 
 <div class="card shadow-base bd-0 pd-25 mg-t-20">
@@ -21,11 +23,12 @@
 
 
   <form action="{{route('product.store')}}" method="POST" enctype="multipart/form-data">
-@csrf
+
+        @csrf
 
 <div class="row">
-
 <div class="col-lg-4">
+
 <div class="form-group">
 <label>Product Title</label>
 <input type="text" name="name" class="form-control" required="required">
@@ -59,8 +62,9 @@
 </div>
 
 <div class="col-lg-4">
+
 <div class="form-group">
- <label>Featured Product</label>
+<label>Featured Product</label>
  <select name="featured_item" class="form-control">
 <option>Please Select the featured status</option>
 <option value="0">Normal</option>
@@ -112,24 +116,43 @@
  </select>
 </div>
 
-    <div class="form-group">
-  <label>Product logo/Image</label>
-<input type="file" name="image" class="form-control-file">
+
+
+
+
+
+
+<div class="form-group">
+<input type="submit" name="addproduct" class="btn btn-block btn-primary btn-flat" value="Add  New Product" >
+</div>
+</div>
+
+
+
+<div class="col-lg-4">
+<div class="form-group">
+
+<label>Product Short Description</label>
+<textarea class="form-control" name="short_desc" rows="5"></textarea>
 </div>
 
 <div class="form-group">
-<input type="submit" name="addcategory" class="btn btn-block btn-primary btn-flat" value="Add  New Product" >
+
+<label>Product Description</label>
+<textarea class="form-control" name="desc" rows="5"></textarea>
 </div>
 
-
-
-
+<div class="form-group">
+  <label>Product logo/Image</label>
+<input type="file" name="image" class="form-control-file">
 
 </div>
 </div>
-
+</div>
+</div>
 </form>
-</div>
+
+
 
 
 @endsection

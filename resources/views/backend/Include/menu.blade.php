@@ -15,7 +15,7 @@
             <span class="menu-item-label">Dashboard</span>
           </a><!-- br-menu-link -->
         </li><!-- br-menu-item -->
-
+                    <!-- Brand Start -->
         <li class="br-menu-item">
           <a href="#" class="br-menu-link with-sub">
             <i class="menu-item-icon icon ion-ios-photos-outline tx-20"></i>
@@ -26,7 +26,9 @@
             <li class="sub-item"><a href="{{route('brand.create')}}" class="sub-link">Add New Brand</a></li>
           </ul>
         </li>
+                    <!-- Brand End -->
 
+                            <!-- Category Start -->
         <li class="br-menu-item">
           <a href="#" class="br-menu-link with-sub">
             <i class="menu-item-icon icon ion-ios-photos-outline tx-20"></i>
@@ -37,7 +39,10 @@
             <li class="sub-item"><a href="{{route('category.create')}}" class="sub-link">Add New Category</a></li>
           </ul>
         </li>
+        <!-- Category End -->
 
+
+        <!-- Product Start -->
         <li class="br-menu-item">
           <a href="#" class="br-menu-link with-sub">
             <i class="menu-item-icon icon ion-ios-photos-outline tx-20"></i>
@@ -48,6 +53,8 @@
             <li class="sub-item"><a href="{{route('product.create')}}" class="sub-link">Add New Product</a></li>
           </ul>
         </li>
+        <!-- Product End -->
+
         <li class="br-menu-item">
           <a href="#" class="br-menu-link with-sub">
             <i class="menu-item-icon icon ion-ios-filing-outline tx-24"></i>
@@ -71,7 +78,9 @@
             <li class="sub-item"><a href="spinners.html" class="sub-link">Spinners</a></li>
             <li class="sub-item"><a href="typography.html" class="sub-link">Typography</a></li>
           </ul>
-        </li><!-- br-menu-item -->
+        </li>
+
+        <!-- br-menu-item -->
         <li class="br-menu-item">
           <a href="#" class="br-menu-link with-sub">
             <i class="menu-item-icon ion-ios-redo-outline tx-24"></i>
@@ -82,7 +91,9 @@
             <li class="sub-item"><a href="navigation-layouts.html" class="sub-link">Nav Layouts</a></li>
             <li class="sub-item"><a href="navigation-effects.html" class="sub-link">Nav Effects</a></li>
           </ul>
-        </li><!-- br-menu-item -->
+        </li>
+
+        <!-- br-menu-item -->
         <li class="br-menu-item">
           <a href="#" class="br-menu-link with-sub">
             <i class="menu-item-icon ion-ios-pie-outline tx-20"></i>
@@ -98,7 +109,9 @@
             <li class="sub-item"><a href="chart-sparkline.html" class="sub-link">Sparkline</a></li>
             <li class="sub-item"><a href="chart-peity.html" class="sub-link">Peity</a></li>
           </ul>
-        </li><!-- br-menu-item -->
+        </li>
+
+        <!-- br-menu-item -->
         <li class="br-menu-item">
           <a href="#" class="br-menu-link with-sub">
             <i class="menu-item-icon icon ion-ios-gear-outline tx-24"></i>
@@ -112,7 +125,9 @@
             <li class="sub-item"><a href="form-editor-code.html" class="sub-link">Code Editor</a></li>
             <li class="sub-item"><a href="form-editor-text.html" class="sub-link">Text Editor</a></li>
           </ul>
-        </li><!-- br-menu-item -->
+        </li>
+
+        <!-- br-menu-item -->
         <li class="br-menu-item">
           <a href="#" class="br-menu-link with-sub">
             <i class="menu-item-icon icon ion-ios-bookmarks-outline tx-20"></i>
@@ -122,7 +137,9 @@
             <li class="sub-item"><a href="table-basic.html" class="sub-link">Basic Table</a></li>
             <li class="sub-item"><a href="table-datatable.html" class="sub-link">Data Table</a></li>
           </ul>
-        </li><!-- br-menu-item -->
+        </li>
+
+        <!-- br-menu-item -->
         <li class="br-menu-item">
           <a href="#" class="br-menu-link with-sub">
             <i class="menu-item-icon icon ion-ios-navigate-outline tx-24"></i>
@@ -133,7 +150,10 @@
             <li class="sub-item"><a href="map-leaflet.html" class="sub-link">Leaflet Maps</a></li>
             <li class="sub-item"><a href="map-vector.html" class="sub-link">Vector Maps</a></li>
           </ul>
-        </li><!-- br-menu-item -->
+        </li>
+
+
+        <!-- br-menu-item -->
         <li class="br-menu-item">
           <a href="#" class="br-menu-link with-sub">
             <i class="menu-item-icon icon ion-ios-color-filter-outline tx-24"></i>
@@ -147,7 +167,10 @@
             <li class="sub-item"><a href="skin-datepicker.html" class="sub-link">Datepicker</a></li>
             <li class="sub-item"><a href="skin-template.html" class="sub-link">Template</a></li>
           </ul>
-        </li><!-- br-menu-item -->
+        </li>
+
+
+        <!-- br-menu-item -->
         <li class="br-menu-item">
           <a href="#" class="br-menu-link with-sub">
             <i class="menu-item-icon icon ion-ios-briefcase-outline tx-22"></i>
@@ -163,26 +186,35 @@
             <li class="sub-item"><a href="typography-util.html" class="sub-link">Typography</a></li>
             <li class="sub-item"><a href="width.html" class="sub-link">Width</a></li>
           </ul>
-        </li><!-- br-menu-item -->
+        </li>
+
+        <!-- br-menu-item -->
         <li class="br-menu-item">
           <a href="pages.html" class="br-menu-link">
             <i class="menu-item-icon icon ion-ios-paper-outline tx-22"></i>
             <span class="menu-item-label">Apps &amp; Pages</span>
           </a><!-- br-menu-link -->
-        </li><!-- br-menu-item -->
+        </li>
+
+        <!-- br-menu-item -->
         <li class="br-menu-item">
           <a href="layouts.html" class="br-menu-link">
             <i class="menu-item-icon icon ion-ios-book-outline tx-22"></i>
             <span class="menu-item-label">Layouts</span>
           </a><!-- br-menu-link -->
-        </li><!-- br-menu-item -->
+        </li>
+
+        <!-- br-menu-item -->
         <li class="br-menu-item">
           <a href="sitemap.html" class="br-menu-link">
             <i class="menu-item-icon icon ion-ios-list-outline tx-22"></i>
             <span class="menu-item-label">Sitemap</span>
           </a><!-- br-menu-link -->
-        </li><!-- br-menu-item -->
+        </li>
+
+        <!-- br-menu-item -->
       </ul><!-- br-sideleft-menu -->
+
 
       <label class="sidebar-label pd-x-10 mg-t-25 mg-b-20 tx-info">Information Summary</label>
 
@@ -218,7 +250,7 @@
           </div>
           <span class="peity-bar" data-peity='{ "fill": ["#9C7846"], "height": 35, "width": 60 }'>3,12,7,9,2,3,4,5,2</span>
         </div><!-- info-list-item -->
-      </div><!-- info-list -->
+      </div>info-list
 
       <br>
     </div><!-

@@ -1,18 +1,22 @@
 <?php
 
 namespace App\Http\Controllers\Backend;
-
 use App\Http\Controllers\Controller;
+use App\Models\Backend\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use Image;
+use File;
 
 class ProductController extends Controller
 {
+    // @return \Illuminate\Http\Response
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $products = Product::orderBy('name','asc')->get();
+        $products = Product::orderBy('title','asc')->get();
         return view('backend.pages.product.manage',compact('products'));
     }
 
@@ -29,19 +33,21 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name'=>'required|max:255',
-        ],
 
-        ['name.required'=>'Please insert the Brand name',
-
-        ]
-    );
         $product=new Product();
-        $product->name=$request->name;
-        $product->slug=Str::slug($request->name);
-        $product->description=$request->description;
-        $product->is_featured=$request->is_featured;
+        $product->title = $request->title;
+        $product->slug=Str::slug($request->title);
+        $product->short_desc=$request->short_desc;
+        $product->desc=$request->desc;
+        $product->tags = $request->tags;
+        $product->quantity = $request->quantity;
+        $product->regular_price = $request->regular_price;
+        $product->offer_price = $request->offer_price;
+        $product->sku_code = $request->sku_code;
+        $product->product_type = $request->product_type;
+        $product->category_id = $request->category_id;
+        $product->brand_id = $request->brand_id;
+        $product->featured_id = $request->featured_id;
         $product->status=$request->status;
 
 
@@ -49,9 +55,9 @@ class ProductController extends Controller
         {
            $image=$request->file('image');
            $img=rand().'.'.$image->getClientOriginalExtension();
-           $location=public_path('backend/img/product/'.$img);
+           $location = public_path('backend/img/product/'.$img);
            Image::make($image)->save($location);
-           $product->image=$img;
+           $product->image = $img;
         }
         $product->save();
         return redirect()->route('product.manage');

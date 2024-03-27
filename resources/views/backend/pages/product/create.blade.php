@@ -27,11 +27,11 @@
         @csrf
 
 <div class="row">
-<div class="col-lg-4">
 
+<div class="col-lg-4">
 <div class="form-group">
 <label>Product Title</label>
-<input type="text" name="name" class="form-control" required="required">
+<input type="text" name="title" class="form-control" required="required">
 </div>
 
 <div class="form-group">
@@ -130,8 +130,8 @@
 
 
 <div class="col-lg-4">
-<div class="form-group">
 
+<div class="form-group">
 <label>Product Short Description</label>
 <textarea class="form-control" name="short_desc" rows="5"></textarea>
 </div>

@@ -55,27 +55,27 @@
         </li>
         <!-- Product End  -->
 
-        <li class="br-menu-item">
+        <!-- <li class="br-menu-item">
           <a href="#" class="br-menu-link with-sub">
             <i class="menu-item-icon icon ion-ios-photos-outline tx-20"></i>
             <span class="menu-item-label">Division</span>
           </a><!-- br-menu-link -->
-          <ul class="br-menu-sub">
+          <!-- <ul class="br-menu-sub">
             <li class="sub-item"><a href="{{route('product.manage')}}" class="sub-link">Mange All Divisions</a></li>
             <li class="sub-item"><a href="{{route('product.create')}}" class="sub-link">Add New Division</a></li> -->
-           </ul>
-        </li>
+           <!-- </ul>
+        </li>  -->
 
-        <li class="br-menu-item">
+        <!-- <li class="br-menu-item">
           <a href="#" class="br-menu-link with-sub">
             <i class="menu-item-icon icon ion-ios-photos-outline tx-20"></i>
             <span class="menu-item-label">District</span>
           </a><!-- br-menu-link -->
-           <ul class="br-menu-sub">
+           <!-- <ul class="br-menu-sub">
             <li class="sub-item"><a href="{{route('product.manage')}}" class="sub-link">Mange All Districts</a></li>
             <li class="sub-item"><a href="{{route('product.create')}}" class="sub-link">Add New District</a></li>
-          </ul>
-        </li>
+          </ul> -->
+        <!-- </li> -->
 
 
         <li class="br-menu-item">

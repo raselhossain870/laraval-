@@ -109,19 +109,19 @@ class ProductController extends Controller
         $product->status=$request->status;
 
 
-        if (!is_null($request->image))
-        {
-            if(File::exists('backend/img/product/'.$product->image)){
-                File::delete('backend/img/product'.$product->image);
-            }
-           $image = $request->file('image');
-           $img = rand().'.'.$image->getClientOriginalExtension();
-           $location = public_path('backend/img/product'.$img);
-           Image::make($image)->save($location);
-           $product->image = $img;
+        if (!is_null($request->image)){
+        if (File::exists('backend/img/product/'.$product->image)){
+            File::delete('backend/img/product/'.$product->image);
+        }
+        $image = $request->file('image');
+        $img = rand().'.'.$image->getClientOriginalExtension();
+        $location = public_path('backend/img/product/'.$img);
+        Image::make($image)->save($location);
+        $product->image = $img;
         }
         $product->save();
         return redirect()->route('product.manage');
+        
     }
 
     /**
@@ -131,8 +131,8 @@ class ProductController extends Controller
     {
         $product = Product::find($id);
         if (!is_null($product)){
-            if (File::exists('Backend/img/product/'.$product->image)){
-                File::delete('Backend/img/product/'.$product->image);
+            if (File::exists('backend/img/product/'.$product->image)){
+                File::delete('backend/img/product/'.$product->image);
             }
            $product->delete();
             return redirect()->route('product.manage');

@@ -56,7 +56,7 @@ class BrandController extends Controller
            $image=$request->file('image');
            $img=rand().'.'.$image->getClientOriginalExtension();
            $location=public_path('backend/img/brand/'.$img);
-           Image::make($image)->save($location);
+           \Image::make($image)->save($location);
            $brand->image=$img;
         }
         $brand->save();
@@ -131,18 +131,18 @@ return redirect()->route('brand.manage');
     {
         $brand = Brand::find($id);
         if (!is_null($brand)){
-            if (File::exists('Backend/img/brand/'.$brand->image)){
-                File::delete('Backend/img/brand/'.$brand->image);
+            if (File::exists('backend/img/brand/'.$brand->image)){
+                File::delete('backend/img/brand/'.$brand->image);
             }
            $brand->delete();
             return redirect()->route('brand.manage');
     }
-
+            
             else{
             return redirect()->route('brand.manage');
     } }}
 
 
-
-
+            
+           
 

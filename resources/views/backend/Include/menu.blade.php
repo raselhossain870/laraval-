@@ -9,12 +9,14 @@
             <span class="menu-item-label">Dashboard</span>
           </a><!-- br-menu-link -->
         </li><!-- br-menu-item -->
-        <li class="br-menu-item">
+
+        <!-- <li class="br-menu-item">
           <a href="mailbox.html" class="br-menu-link">
             <i class="menu-item-icon icon ion-ios-email-outline tx-24"></i>
             <span class="menu-item-label">Dashboard</span>
           </a><!-- br-menu-link -->
-        </li><!-- br-menu-item -->
+        <!-- </li> -->
+        <!-- br-menu-item -->
                     <!-- Brand Start -->
         <li class="br-menu-item">
           <a href="#" class="br-menu-link with-sub">
@@ -55,28 +57,31 @@
         </li>
         <!-- Product End  -->
 
-        <!-- <li class="br-menu-item">
+                       <!-- Division Start -->
+        <li class="br-menu-item">
           <a href="#" class="br-menu-link with-sub">
             <i class="menu-item-icon icon ion-ios-photos-outline tx-20"></i>
             <span class="menu-item-label">Division</span>
           </a><!-- br-menu-link -->
-          <!-- <ul class="br-menu-sub">
-            <li class="sub-item"><a href="{{route('product.manage')}}" class="sub-link">Mange All Divisions</a></li>
-            <li class="sub-item"><a href="{{route('product.create')}}" class="sub-link">Add New Division</a></li> -->
-           <!-- </ul>
-        </li>  -->
+          <ul class="br-menu-sub">
+            <li class="sub-item"><a href="{{route('division.manage')}}" class="sub-link">Mange All Divisions</a></li>
+            <li class="sub-item"><a href="{{route('division.create')}}" class="sub-link">Add New Division</a></li>
+        </ul>
+    </li>
+                        <!-- Division End -->
 
-        <!-- <li class="br-menu-item">
+                         <!-- District Start -->
+        <li class="br-menu-item">
           <a href="#" class="br-menu-link with-sub">
             <i class="menu-item-icon icon ion-ios-photos-outline tx-20"></i>
             <span class="menu-item-label">District</span>
           </a><!-- br-menu-link -->
-           <!-- <ul class="br-menu-sub">
-            <li class="sub-item"><a href="{{route('product.manage')}}" class="sub-link">Mange All Districts</a></li>
-            <li class="sub-item"><a href="{{route('product.create')}}" class="sub-link">Add New District</a></li>
-          </ul> -->
-        <!-- </li> -->
-
+            <ul class="br-menu-sub">
+            <li class="sub-item"><a href="{{route('district.manage')}}" class="sub-link">Mange All Districts</a></li>
+            <li class="sub-item"><a href="{{route('district.create')}}" class="sub-link">Add New District</a></li>
+          </ul>
+         </li>
+                         <!-- District End -->
 
         <li class="br-menu-item">
           <a href="#" class="br-menu-link with-sub">

@@ -20,12 +20,8 @@
 <thead>
 <tr>
 <th>#SI</th>
-<th>Image</th>
-<th>Name</th>
-<th>Slug</th>
-<th>Description</th>
-<th>Is Featured</th>
-<th>Status</th>
+<th>District Name</th>
+<th>Division Name</th>
 <th>Action</th>
 </tr>
 </thead>
@@ -36,18 +32,17 @@
 
 
 <tr>
-<th scope="row">{{$i}}</th>
+<!-- <th scope="row">{{$i}}</th>
 <td>
   @if(!is_null($district->image))
   <img src="{{asset('backend/img/district')}}/{{$district->image}}" width="40">
   @else
   No Thumbnail
   @endif
-</td>
+</td> -->
 <td>{{$district->name}}</td>
-<td>{{$district->slug}}</td>
-<td>{{$district->description}}</td>
-<td>
+<td>{{$district->division_id}}</td>
+<!-- <td>
 @if($district->is_featured==1)
 <span class="badge badge-success">Yes</span>
 @else
@@ -61,15 +56,15 @@
 <span class="badge badge-warning">Inactive</span>
 @endif
 </td>
-<td>
+<td> -->
 <a class="btn btn-info btn-sm" href="{{route('district.edit',$district->id)}}">
 <i class="fas fa-pencil-alt"></i>
 </a>
-<a class="btn btn-danger btn-sm" href="#" data-toggle="modal" data-target="#deleteBrand{{$district->id}}">
+<a class="btn btn-danger btn-sm" href="#" data-toggle="modal" data-target="#deleteDistrict{{$district->id}}">
 <i class="fas fa-trash"></i>
 </a>
 
-<div class="modal fade" id="deleteBrand{{$district->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="deleteDistrict{{$district->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div class="modal-dialog" role="document">
 <div class="modal-content">
 <div class="modal-header">
@@ -80,6 +75,7 @@
 <span aria-hidden="true">&times;</span>
 </button>
 </div>
+
 <div class="modal-body">
 <ul>
 <li><a href="{{route('district.destroy', $district->id)}}" class="btn btn-danger">Delete</a></li>

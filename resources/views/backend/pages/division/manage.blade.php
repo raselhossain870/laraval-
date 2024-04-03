@@ -19,8 +19,6 @@
     <table class="table table-bordered table-striped table-hover" cellspacing="0" width="100%">
 <thead>
 <tr>
-<th>#SI</th>
-
 <th>Name</th>
 <th>Priority</th>
 <th>Action</th>
@@ -43,11 +41,13 @@
 </td> -->
 
 <td>{{$division->name}}</td>
-<td>{{$division->slug}}</td>
+<td>{{($division->priority) }}</td>
+
+
 <!-- <td>{{$division->description}}</td> -->
 
-<td>
-@if($division->is_featured==1)
+<!-- <td>
+@if($division->name==1)
 <span class="badge badge-success">Yes</span>
 @else
 <span class="badge badge-warning">No</span>
@@ -60,7 +60,7 @@
 @else
 <span class="badge badge-warning">Inactive</span>
 @endif
-</td>
+</td> -->
 <td>
 <a class="btn btn-info btn-sm" href="{{route('division.edit',$division->id)}}">
 <i class="fas fa-pencil-alt"></i>
@@ -80,6 +80,7 @@
 <span aria-hidden="true">&times;</span>
 </button>
 </div>
+
 <div class="modal-body">
 <ul>
 <li><a href="{{route('division.destroy', $division->id)}}" class="btn btn-danger">Delete</a></li>

@@ -19,23 +19,29 @@
 
 
 
-<div class="row">
-<div class="col-lg-6">
+<!-- <div class="row">
+<div class="col-lg-6"> -->
   <form action="{{route('district.store')}}" method="POST" enctype="multipart/form-data">
 @csrf
+
 <div class="form-group">
-<label>District Name</label>
+<label>#SL</label>
 <input type="text" name="name" class="form-control" required="required">
 </div>
 
 <div class="form-group">
-<label>District Descriptions</label>
-<textarea class="form-control" name="description" rows="7"></textarea>
-</div>
+<label>District Name</label>
+<input type="text" name="district name" class="form-control" required="required">
 </div>
 
+<div class="form-group">
+<label>Division Name</label>
+<input type="text" name="division name" class="form-control" required="required">
+</div>
+<!-- </div> -->
 
-<div class="col-lg-6">
+
+<!-- <div class="col-lg-6">
 <div class="form-group">
  <label>Is Featured</label>
  <select class="form-control" name="is_featured">
@@ -43,23 +49,23 @@
 <option value="1">Yes Featured</option>
 <option value="0">Not Featured</option>
 </select>
-</div>
+</div> -->
 
 
 
-<div class="form-group">
+<!-- <div class="form-group">
  <label>Status</label>
  <select name="status" class="form-control">
 <option>Please Select User Account Status</option>
 <option value="0">Inactive</option>
 <option value="1">Active</option>
 </select>
-</div>
+</div> -->
 
-<div class="form-group">
+<!-- <div class="form-group">
  <label>District logo/Image</label>
  <input type="file" name="image" class="form-control-file">
-</div>
+</div> -->
 
 
 <div class="form-group">
@@ -67,9 +73,7 @@
 </div>
 </form>
 </div>
-</div>
-
-
-</div>
+<!-- </div>
+</div> -->
 
 @endsection

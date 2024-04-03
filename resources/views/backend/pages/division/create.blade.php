@@ -28,7 +28,7 @@
 
 <div class="form-group">
 <label>Priority</label>
-<input type="text" name="name" class="form-control" required="required">
+<input type="text" name="priority" class="form-control" required="required">
 </div>
 
 <!-- <div class="col-lg-6"> -->

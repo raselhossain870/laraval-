@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Division extends Model
 {
     use HasFactory;
+    // return function district();
+    // {
+    //     return $this->belongsTo(District::class);
+    // }
 }

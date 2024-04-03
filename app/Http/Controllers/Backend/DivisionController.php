@@ -36,8 +36,8 @@ class DivisionController extends Controller
     public function store(Request $request)
     {
        $division = new Division();
-       $division->name =$request->name;
-       $division->priority  =$request->priority;
+       $division->name          = $request->name;
+       $division->priority      = $request->priority;
        $division->save();
        return redirect()->route('division.manage');
     }
@@ -86,10 +86,9 @@ class DivisionController extends Controller
         $division = Division::find($id);
         if (!is_null($division))
         {
-            $districts = District::where('division_id',$division->id)->get();
-            foreach($districts as $district){
-                $district->delete();
-            }
+            // $districts = District::where('division_id',$division->id)->get();
+            // foreach($districts as $district){
+            //     $district->delete();}
             $division->delete();
         }
         return redirect()->route('division.manage');

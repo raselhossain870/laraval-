@@ -3,12 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
-use App\Models\Backend\Division;
-use App\Models\Backend\District;
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
-use Image;
-use File;
 
 class DistrictController extends Controller
 {
@@ -17,8 +12,7 @@ class DistrictController extends Controller
      */
     public function index()
     {
-        $districts = District::orderBy('name','asc')->get();
-        return view('backend.pages.district.manage',compact('districts'));
+        //
     }
 
     /**
@@ -26,8 +20,7 @@ class DistrictController extends Controller
      */
     public function create()
     {
-        $divisions = Division::orderBy('priority','asc')->get();
-        return view('backend.pages.district.create',compact('divisions'));
+        //
     }
 
     /**
@@ -35,10 +28,7 @@ class DistrictController extends Controller
      */
     public function store(Request $request)
     {
-       $district->name           = $request->name;
-       $district->division_id    = $request->division_id;
-       $district->save();
-       return redirect()->route('district.manage');
+        //
     }
 
     /**
@@ -54,16 +44,7 @@ class DistrictController extends Controller
      */
     public function edit(string $id)
     {
-        $district = District::find($id);
-        $divisions = Division::orderBy('priority','asc')->get();
-        if (!is_null($district))
-        {
-        return view('backend.pages.district.edit',compact('district','divisions'));
-        }
-        else{
-            return back();
-
-    }
+        //
     }
 
     /**
@@ -71,11 +52,7 @@ class DistrictController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $district = District::find($id);
-        $district->name             = $request->name;
-        $district->division_id      = $request->division_id;
-        $district->save();
-        return redirect()->route('district.manage');
+        //
     }
 
     /**
@@ -83,12 +60,6 @@ class DistrictController extends Controller
      */
     public function destroy(string $id)
     {
-        $district = District::find($id);
-        if (!is_null($district))
-        {
-             $district->delete();
-            }
-
-        return redirect()->route('district.manage');
+        //
     }
 }

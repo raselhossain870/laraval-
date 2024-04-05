@@ -11,12 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('districts', function (Blueprint $table) {
+        Schema::create('divisions', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->unsignedInteger('divisions_id');
-            $table->timestamps();
-            $table->foreign('divisions_id')->references('id')->on('divisions')->onDelete('cascade');
+                $table->string('name');
+                $table->unsignedInteger('priority')->default(1);
+                $table->timestamps();
         });
     }
 
@@ -25,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('districts');
+        Schema::dropIfExists('divisions');
     }
 };

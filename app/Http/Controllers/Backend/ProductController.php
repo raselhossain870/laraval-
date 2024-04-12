@@ -84,7 +84,8 @@ class ProductController extends Controller
         else{
             return redirect()->route('product.manage');
 
-    }}
+    }
+}
 
 
     /**
@@ -121,7 +122,7 @@ class ProductController extends Controller
         }
         $product->save();
         return redirect()->route('product.manage');
-        
+
     }
 
     /**
@@ -140,6 +141,8 @@ class ProductController extends Controller
 
             else{
             return redirect()->route('product.manage');
-    } }}
+    }
+}
+}
 
 

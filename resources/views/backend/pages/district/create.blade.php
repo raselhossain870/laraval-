@@ -17,27 +17,34 @@
 </div>
 
 
-  <form action="{{route('district.store')}}" method="POST" enctype="multipart/form-data">
-@csrf
+  <form class="shadow p-3 mb-5 bg-body rounded bg-white mt-4" action="{{route('district.store')}}" method="POST" enctype="multipart/form-data">
+    @csrf
 
 
 <div class="form-group">
 <label>District Name</label>
-<input type="text" name="district name" class="form-control" required="required">
+<input type="text" name="name" class="form-control" required="required">
 </div>
 
 <div class="form-group">
 <label>Division Name</label>
-<input type="text" name="division name" class="form-control" required="required">
-</div>
+ <select name="division_id" class="form-control">
+<option>Please Select the Division Name</option>
 
+@foreach (App\Models\Backend\Division::orderBy('name','asc')->get() as $division)
+                    <option value="{{$division->id}}">{{$division->name}}</option>
+                @endforeach
+
+</select>
+</div>
 
 
 <div class="form-group">
 <input type="submit" name="addUser" class="btn btn-block btn-primary btn-flat" value="Add New District">
 </div>
-</form>
+
 </div>
+</form>
 <!-- </div>
 </div> -->
 

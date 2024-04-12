@@ -34,8 +34,8 @@
 <div class="form-group">
 <input type="submit" name="addUser" class="btn btn-block btn-primary btn-flat" value="Add New Division">
 </div>
-</form>
-</div>
 
+</div>
+</form>
 
 @endsection

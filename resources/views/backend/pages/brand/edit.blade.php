@@ -63,7 +63,7 @@ selected
 <div class="form-group">
 <label>Brand logo/Image</label><br>
 @if(!is_null($brand->image))
-<img src="{{asset('Backend/img/brand')}}/{{$brand->image}}" width="80">
+<img src="{{asset('backend/img/brand')}}/{{$brand->image}}" width="80">
 @else
 No Thumbnail
 @endif

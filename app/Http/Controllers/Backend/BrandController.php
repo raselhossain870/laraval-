@@ -43,6 +43,7 @@ class BrandController extends Controller
 
         ]
     );
+
         $brand=new Brand();
         $brand->name=$request->name;
         $brand->slug=Str::slug($request->name);
@@ -56,7 +57,7 @@ class BrandController extends Controller
            $image=$request->file('image');
            $img=rand().'.'.$image->getClientOriginalExtension();
            $location=public_path('backend/img/brand/'.$img);
-           \Image::make($image)->save($location);
+           Image::make($image)->save($location);
            $brand->image=$img;
         }
         $brand->save();
@@ -137,12 +138,12 @@ return redirect()->route('brand.manage');
            $brand->delete();
             return redirect()->route('brand.manage');
     }
-            
+
             else{
             return redirect()->route('brand.manage');
     } }}
 
 
-            
-           
+
+
 

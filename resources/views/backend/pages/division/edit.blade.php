@@ -9,12 +9,14 @@
 </div>
 </div>
 
+<div class="form-group">
 <div class="card shadow-base bd-0 pd-30 mg-t-20">
 <div class="d-md-flux justify-content-between align-items-center" >
 <div>
 <h6 class="tx-13 tx-uppercase tx-inverse tx-semibold tx-spacing-1">Create A New Division</h6>
 </div>
 </div>
+
 
 
 
@@ -33,15 +35,12 @@
 <input type="text" name="priority" class="form-control" required="required">
 </div>
 
-
-        
-
 <div class="form-group">
     <input type="submit" name="addUser" class="btn btn-block btn-primary btn-flat" value="Save changes">
         </div>
-</form>
-</div>
-</div>
-<!-- </div> -->
 
+</div>
+</div>
+</div>
+</form>
 @endsection

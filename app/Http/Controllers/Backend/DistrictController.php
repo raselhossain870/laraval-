@@ -56,7 +56,7 @@ class DistrictController extends Controller
     public function edit(string $id)
     {
         $district = District::find($id);
-        $divisions = Division::orderBy('priority', 'asc')->get();
+        $divisions = Division::orderBy('priority','asc')->get();
         if (!is_null($district))
         {
         return view('backend.pages.district.edit',compact('district','divisions'));
